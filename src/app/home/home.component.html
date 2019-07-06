@@ -1,0 +1,59 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 col-md-6">
+        <h2>Add a New Contact <button class="btn btn-success"> + New Contact</button></h2>
+          <form  (ngSubmit)="onsubmitAddContact(form.value)" class="well">
+              <div class="form-group">
+                <label>Name</label>
+                <input type="text" name="name" class="form-control" placeholder="Enter Name" ngModel required> 
+              </div>
+              <div class="form-group">
+                <label>Age</label>
+                <input type="number" name="age" class="form-control" placeholder="Enter Age" ngModel required> 
+              </div>
+              <div class="form-group">
+                <label>Gender</label>
+                <input type="text" name="gender" class="form-control" placeholder="Enter Gender" ngModel required> 
+              </div>
+              <div class="form-group">
+                <label>Mobile Number</label>
+                <input type="text" name="mnumber" class="form-control" placeholder="Enter Mobile Number" ngModel required> 
+              </div>
+            <button type="submit" class="btn btn-success">Add</button>
+          </form>
+
+    </div>
+    <div class="col-sm-12 col-md-6">
+        <h3>Displaying all the data from the database in Mlab</h3>
+    
+    <table class="table table-responsive table-striped">
+      <thead class="thead-dark">
+        <tr>
+          
+          <th scope="col">Name</th>
+          <th scope="col">Age</th>
+          <th scope="col">Gender</th>
+          <th scope="col">Mobile Number</th>
+          <th scope="col"></th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let contactData of contData">
+          <td >{{contactData.name}}</td>
+          <td>{{contactData.age}}</td>
+          <td>{{contactData.gender}}</td>
+          <td>{{contactData.mnumber}}</td>
+          <td >Edit</td>
+          <td >Delete</td>
+        </tr>
+       
+      </tbody>
+    </table>
+    </div>
+  </div>
+  
+  
+ 
+    
+</div>
